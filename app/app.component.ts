@@ -9,5 +9,5 @@ import {Todo} from './shared/todo';
 })
 
 export class AppComponent{
-    title: string = 'Angular 2';
+    title: string = 'Angular 4';
 }

@@ -2,8 +2,9 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {Routes, RouterModule} from '@angular/router';
-import {MdMenuModule, OVERLAY_PROVIDERS} from '@angular/material';
+import {RouterModule} from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdMenuModule} from '@angular/material';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -25,7 +26,8 @@ import { Auth } from './auth/auth';
         HttpModule,
         RouterModule,
         AppRoutingModule,
-        MdMenuModule
+        MdMenuModule,
+        BrowserAnimationsModule
     ],
     declarations:[
         AppComponent,
@@ -39,8 +41,7 @@ import { Auth } from './auth/auth';
     providers: [
         Todoservices,
         AuthGuard,
-        Loginservices,
-        OVERLAY_PROVIDERS
+        Loginservices
     ],
     bootstrap: [AppComponent]
 })
