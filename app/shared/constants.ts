@@ -1,0 +1,1 @@
+export const ROOT_URL :string = 'http://agro-manager.dev.4-com.pro/api';

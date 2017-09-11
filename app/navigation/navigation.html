@@ -1,0 +1,49 @@
+<div class="block-main-head-logo">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <button>Главная</button>
+                    </li>
+                    <li>
+                        <md-menu #menu="mdMenu">
+                            <button md-menu-item>
+                                <span> Redial </span>
+                            </button>
+                            <button md-menu-item disabled>
+                                <span> Check voicemail </span>
+                            </button>
+                            <button md-menu-item>
+                                <span> Disable alerts </span>
+                            </button>
+                        </md-menu>
+                    </li>
+                    <li>
+                        <button md-button [mdMenuTriggerFor]="menu">Контрагенты</button>
+                        <md-menu #menu="mdMenu">
+                            <button md-menu-item>Добавить</button>
+                        </md-menu>
+                    </li>
+                    <li>
+                        <button md-button [mdMenuTriggerFor]="menu">Справочники</button>
+                        <md-menu #menu="mdMenu">
+                            <button md-menu-item>Добавить область или район</button>
+                            <button md-menu-item>Добавить культуру</button>
+                            <button md-menu-item>Цены</button>
+                        </md-menu>
+                    </li>
+                    <li>
+                        <button>Отчёт по контрагентам</button>
+                    </li>
+                </ul>
+                <div class="pull-right">
+                    <ul class="nav navbar-nav">
+                        <li>Test Testovich</li>
+                        <li><button>Выход</button></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

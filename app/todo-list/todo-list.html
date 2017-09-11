@@ -1,0 +1,3 @@
+<div class="todo-list" *ngIf="todos.length">
+    <todo-item (toggle)="toggle($event)" (delete)="delete($event)" [todo]="todo" [ngClass]="{ 'completed' : todo.completed }" *ngFor="let todo of todos"></todo-item>
+</div>
