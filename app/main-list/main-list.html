@@ -1,0 +1,72 @@
+<div class="block-main-content" id="resultsTable_box">
+    <div *ngIf="counteragents.length && regions.length">
+        <table id="resultsTable" class="display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Полное название с формой собственности</th>
+                    <th>Головная компания</th>
+                    <th>Область</th>
+                    <th>Район</th>
+                    <th>Телефон/факс</th>
+                    <th>Руководитель</th>
+                    <th>Название товара (количество/цена)</th>
+                    <th>Дата контакта</th>
+                    <th>Тип контакта (тел. звонок/встреча)</th>
+                    <th>Кто общался от компании</th>
+                    <th>Тема контакта </th>
+                    <th>Результат переговоров</th>
+                    <th>Дата следующего контакта</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let counteragent of counteragents; let i = index" [ngClass]="{'completed' : counteragent.contacts.status == 'completed', 'conversation' : counteragent.contacts.status == 'conversation', 'holding' : counteragent.contacts.status == 'holding'}">
+                    <td>{{i+1}}</td>
+                    <td>
+                        <div class="menu_context">
+                            <p>{{counteragent.name}}</p>
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-bars"></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a id="myModalTrigger_20" data-id="94">Сделать звонок</a>
+                                        </li>
+                                        <li>
+                                            <a data-id="94">Редактировать контрагент</a>
+                                        </li>
+                                        <li>
+                                            <a data-id="94">Внести результаты анализов</a>
+                                        </li>
+                                        <li>
+                                            <a data-pk="94">Удалить контрагент</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>{{dataActual(counteragent).date_now}}</td>
+                    <td>{{dataActual(counteragent).region}}</td>
+                    <td>{{dataActual(counteragent).district}}</td>
+                    <td>{{counteragent.phone_or_fax}}</td>
+                    <td>{{counteragent.director}}</td>
+                    <td>
+                        <div>Гречка 345 44.00</div>
+                    </td>
+                    <td>{{counteragent.contacts.date}}</td>
+                    <td>{{counteragent.contacts.contact_type}}</td>
+                    <td>{{counteragent.contacts.contact_person}}</td>
+                    <td>{{counteragent.contacts.subject}}</td>
+                    <td>{{counteragent}}</td>
+                    <td>{{dataActual(counteragent).next_date}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="counteragents.length==0">
+        <p>Нет Результатов</p>
+    </div>
+</div>

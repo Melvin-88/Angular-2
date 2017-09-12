@@ -13,8 +13,12 @@ import {TodoListComponent} from './todo-list/todo-list';
 import {TodoItemComponent} from './todo-item/todo-item';
 import {HomeComponent} from './home/home';
 import {NavigationComponent} from './navigation/navigation';
+import {MainListComponent} from './main-list/main-list';
+
 import {Todoservices} from './shared/services';
 import {Loginservices} from './shared/services-login';
+import {Mainservices} from './shared/services-main';
+
 import { AuthGuard } from './guards/loggedin.guard';
 import { Auth } from './auth/auth';
 
@@ -36,12 +40,14 @@ import { Auth } from './auth/auth';
         TodoItemComponent,
         NavigationComponent,
         HomeComponent,
+        MainListComponent,
         Auth
     ],
     providers: [
         Todoservices,
         AuthGuard,
-        Loginservices
+        Loginservices,
+        Mainservices
     ],
     bootstrap: [AppComponent]
 })
