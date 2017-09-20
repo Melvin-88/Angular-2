@@ -1,0 +1,73 @@
+<div class="modal-common-style">
+    <div class="modal-header">
+        <p class="title-modal">Контрагент</p>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form class="clearfix" name="form_add_contragent">
+            <div class="">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="form-group">Полное название с формой собственности<input autocomplete="off" class="form-control" id="name" name="name" placeholder="Введите информацию" type="text" value=""></label>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="form-group">Головная компания<input autocomplete="off" class="form-control" id="head_company" name="head_company" placeholder="Введите информацию" type="text" value=""></label>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="form-group">Адрес<input autocomplete="off" class="form-control" id="address" name="address" placeholder="Введите адрес" type="text" value=""></label>
+                    </div>
+                </div>
+            </div>
+            <div class=" select-wrapper">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <span>Область</span><select class="selectpicker" data-check="contr" id="region" name="region">
+                        <option value="1">
+                            Полтавская
+                        </option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <span>Район</span>
+                        <div id="district_block">
+                            <select class="selectpicker" data-reactroot="" id="district_modal" name="district">
+                                <option value="1">
+                                    Решетиловский
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-group">Телефон/факс<input autocomplete="off" class="form-control" id="phone_or_fax" name="phone_or_fax" placeholder="Введите информацию" type="text" value=""></label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-group">Руководитель<input autocomplete="off" class="form-control" id="director" name="director" placeholder="Введите информацию" type="text" value=""></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group select-wrapper">
+                <div class="col-md-6 col-lg-offset-3 col-md-offset-3">
+                    <button class="btn btn-primary" type="submit">Сохранить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

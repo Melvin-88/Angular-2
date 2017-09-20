@@ -52,8 +52,7 @@ import { Auth } from './auth/auth';
         Todoservices,
         AuthGuard,
         Loginservices,
-        Mainservices,
-        NgbdModalComponent
+        Mainservices
     ],
     bootstrap: [AppComponent]
 })

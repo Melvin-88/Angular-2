@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
-import {NgbdModalComponent} from '../modals/modal-component'
+import {NgbdModalComponent} from '../modals/modal-component';
 
 @Component({
     selector: 'home',
@@ -8,8 +8,9 @@ import {NgbdModalComponent} from '../modals/modal-component'
 })
 
 export class HomeComponent {
-    constructor(private modal: NgbdModalComponent) {}
+    @ViewChild(NgbdModalComponent) child;
+
     openModal(){
-        this.modal.openHome();
+        this.child.openHome();
     }
 }
