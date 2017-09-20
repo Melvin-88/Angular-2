@@ -2,7 +2,11 @@
     <h1>HOME</h1>
 </div>
 <navigation (open)="openModal()"></navigation>
-<main-list></main-list>
+<main-list
+        [regions]="regions"
+        [crops]="crops"
+        [counteragents]="counteragents"
+        [districts]="districts"></main-list>
 
 <!--MODALS-->
 <ngbd-modal-component (openModal)="openHome()"></ngbd-modal-component>

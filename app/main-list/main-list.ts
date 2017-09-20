@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {Mainservices} from '../shared/services-main';
+import {Component, Input} from '@angular/core';
 
 
 @Component({
@@ -9,32 +8,11 @@ import {Mainservices} from '../shared/services-main';
 })
 
 export class MainListComponent {
-    regions:any;
-    crops:any;
-    counteragents:any;
-    districts:any;
+    @Input() regions:any;
+    @Input() crops:any;
+    @Input() counteragents:any;
+    @Input() districts:any;
 
-    constructor(private mainService: Mainservices){
-        this.regions=[];
-        this.crops=[];
-        this.counteragents=[];
-        this.districts=[];
-    }
-
-    ngOnInit(){
-        this.mainService.getRegion().subscribe((regions) => {
-            this.regions = regions;
-        });
-        this.mainService.getCrops().subscribe((crops) => {
-            this.crops = crops;
-        });
-        this.mainService.getCounteragents().subscribe((counteragents) => {
-            this.counteragents = counteragents.results;
-        });
-        this.mainService.getDistricts().subscribe((districts) => {
-            this.districts = districts;
-        });
-    }
     dataActual(counteragent: any){
         let output:any = {
             date_now: '',
