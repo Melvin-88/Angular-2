@@ -1,7 +1,8 @@
 <div>
     <h1>HOME</h1>
-    <!--<todo></todo>-->
-    <!--<todo-list></todo-list>-->
 </div>
-<navigation></navigation>
+<navigation (open)="openModal()"></navigation>
 <main-list></main-list>
+
+<!--MODALS-->
+<ngbd-modal-component (openModal)="openHome()"></ngbd-modal-component>

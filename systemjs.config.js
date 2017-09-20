@@ -14,6 +14,7 @@
             '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
             '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+            '@ng-bootstrap/ng-bootstrap': 'npm:@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
 
             '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
             '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',

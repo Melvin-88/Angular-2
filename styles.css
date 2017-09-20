@@ -205,3 +205,14 @@ todo, todo-list{
 .todo-item:hover .actions {
     opacity: 1;
 }
+.modal-backdrop.show {
+    opacity: .5 !important;
+}
+.fade.show {
+    opacity: 1;
+}
+.modal-dialog {
+    max-width: 500px;
+    margin: 30px auto;
+    transform: none !important;
+}

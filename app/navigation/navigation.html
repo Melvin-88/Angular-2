@@ -8,12 +8,22 @@
                     </li>
                     <li>
                         <md-menu #appMenu="mdMenu">
-                            <button md-menu-item> Settings </button>
-                            <button md-menu-item> Help </button>
+                            <button md-menu-item (click)="onOpen(content)"> Добавить </button>
                         </md-menu>
 
                         <button md-icon-button [mdMenuTriggerFor]="appMenu">
-                            <md-icon>more_vert</md-icon>
+                            <md-icon>Контрагенты</md-icon>
+                        </button>
+                    </li>
+                    <li>
+                        <md-menu #appMenu2="mdMenu">
+                            <button md-menu-item> Добавить область или район </button>
+                            <button md-menu-item> Добавить культуру </button>
+                            <button md-menu-item> Цены </button>
+                        </md-menu>
+
+                        <button md-icon-button [mdMenuTriggerFor]="appMenu2">
+                            <md-icon>Справочник</md-icon>
                         </button>
                     </li>
                     <li>

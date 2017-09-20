@@ -36,22 +36,20 @@ export class MainListComponent {
         });
     }
     dataActual(counteragent: any){
-        console.log(this.districts);
         let output:any = {
             date_now: '',
             next_date: '',
             region: '',
             district: ''
         };
-        output.region = this.regions.filter((e)=>{
+        output.region = this.regions.filter((e:any)=>{
             return Number(counteragent.region) == Number(e.id)
         })[0].name;
 
-        output.district = this.districts ? this.districts.filter((e)=>{
+        output.district = this.districts ? this.districts.filter((e:any)=>{
             return Number(counteragent.district) == Number(e.id)
         })[0].name : '';
-            
-        console.log(output);
+
         return output;
     }
 }

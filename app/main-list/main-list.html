@@ -26,41 +26,34 @@
                         <div class="menu_context">
                             <p>{{counteragent.name}}</p>
                             <ul class="nav navbar-nav">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-bars"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a id="myModalTrigger_20" data-id="94">Сделать звонок</a>
-                                        </li>
-                                        <li>
-                                            <a data-id="94">Редактировать контрагент</a>
-                                        </li>
-                                        <li>
-                                            <a data-id="94">Внести результаты анализов</a>
-                                        </li>
-                                        <li>
-                                            <a data-pk="94">Удалить контрагент</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <md-menu #appMenu="mdMenu">
+                                    <button md-menu-item> Сделать звонок </button>
+                                    <button md-menu-item> Редактировать контрагент </button>
+                                    <button md-menu-item> Внести результаты анализов </button>
+                                    <button md-menu-item> Удалить контрагент </button>
+                                </md-menu>
+
+                                <button md-icon-button [mdMenuTriggerFor]="appMenu">
+                                    <md-icon><i class="material-icons">reorder</i></md-icon>
+                                </button>
                             </ul>
                         </div>
                     </td>
-                    <td>{{dataActual(counteragent).date_now}}</td>
+                    <td>{{counteragent.head_company}}</td>
                     <td>{{dataActual(counteragent).region}}</td>
                     <td>{{dataActual(counteragent).district}}</td>
                     <td>{{counteragent.phone_or_fax}}</td>
                     <td>{{counteragent.director}}</td>
                     <td>
-                        <div>Гречка 345 44.00</div>
+                        <div *ngFor="let product of counteragent.contacts.products; let i = index">
+                            {{product.name}}
+                        </div>
                     </td>
-                    <td>{{counteragent.contacts.date}}</td>
+                    <td>{{dataActual(counteragent).date_now}}</td>
                     <td>{{counteragent.contacts.contact_type}}</td>
                     <td>{{counteragent.contacts.contact_person}}</td>
                     <td>{{counteragent.contacts.subject}}</td>
-                    <td>{{counteragent}}</td>
+                    <td>{{counteragent.contacts.status == 'completed' ? 'completed' : counteragent.contacts.status == 'conversation' ? 'conversation' : counteragent.contacts.status == 'holding' ? 'holding' : ''}}</td>
                     <td>{{dataActual(counteragent).next_date}}</td>
                 </tr>
             </tbody>

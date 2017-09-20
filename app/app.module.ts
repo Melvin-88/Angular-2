@@ -5,6 +5,7 @@ import {HttpModule} from '@angular/http';
 import {RouterModule} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdMenuModule} from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -14,6 +15,7 @@ import {TodoItemComponent} from './todo-item/todo-item';
 import {HomeComponent} from './home/home';
 import {NavigationComponent} from './navigation/navigation';
 import {MainListComponent} from './main-list/main-list';
+import { NgbdModalComponent, NgbdModalContent } from './modals/modal-component';
 
 import {Todoservices} from './shared/services';
 import {Loginservices} from './shared/services-login';
@@ -31,7 +33,8 @@ import { Auth } from './auth/auth';
         RouterModule,
         AppRoutingModule,
         MdMenuModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        NgbModule.forRoot(),
     ],
     declarations:[
         AppComponent,
@@ -41,13 +44,16 @@ import { Auth } from './auth/auth';
         NavigationComponent,
         HomeComponent,
         MainListComponent,
+        NgbdModalComponent, NgbdModalContent,
         Auth
     ],
+    entryComponents: [NgbdModalContent],
     providers: [
         Todoservices,
         AuthGuard,
         Loginservices,
-        Mainservices
+        Mainservices,
+        NgbdModalComponent
     ],
     bootstrap: [AppComponent]
 })
